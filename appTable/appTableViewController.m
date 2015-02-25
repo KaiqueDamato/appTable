@@ -7,16 +7,24 @@
 //
 
 #import "appTableViewController.h"
+#import "AppList.h"
+#import "appTableViewCell.h"
 
 @interface appTableViewController ()
 
 @end
 
-@implementation appTableViewController
+@implementation appTableViewController {
+    AppList *apps;
+    appTableViewCell *cells;
+    UIImage *image;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    apps = [[AppList alloc]init];
+    cells = [[appTableViewCell alloc]init];
+//    self.tableView.rowHeight = 44;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -40,18 +48,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [apps.nome count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    appTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
+    long row = [indexPath row];
+    cell.textLabel.text = apps.nome[row];
+    cell.detailTextLabel.text = apps.categoria[row];
+    cell.imageView.image = [UIImage imageNamed:apps.app[row]];
     
-    // Configure the cell...
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
