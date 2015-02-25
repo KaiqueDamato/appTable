@@ -24,4 +24,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)botaoVoltar:(id)sender {
+   
+    [self dismissViewControllerAnimated:true completion:nil];
+}
 @end

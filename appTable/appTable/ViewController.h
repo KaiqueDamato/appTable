@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *nomeApp;
+@property (weak, nonatomic) IBOutlet UIImageView *imagemApp;
+- (IBAction)botaoVoltar:(id)sender;
+
 
 @end
 
