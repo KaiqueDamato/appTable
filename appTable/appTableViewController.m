@@ -20,6 +20,11 @@
     UIImage *image;
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return true;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     apps = [[AppList alloc]init];
