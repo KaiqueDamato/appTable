@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface appTableViewController : UITableViewController
+- (IBAction)editar:(id)sender;
 
 @end
