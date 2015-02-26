@@ -62,6 +62,10 @@
     cell.textLabel.text = [lista.itens[row] nome];
     cell.detailTextLabel.text = [lista.itens[row] categoria];
     cell.imageView.image = [UIImage imageNamed:[lista.itens[row] imagem]];
+    if (!cell.imageView.image) {
+        UIImage *newImage = [UIImage imageWithContentsOfFile:[lista.itens[row] imagem]];
+        cell.imageView.image = newImage;
+    }
     cell.imageView.layer.cornerRadius = 5;
     cell.imageView.clipsToBounds = YES;
     
