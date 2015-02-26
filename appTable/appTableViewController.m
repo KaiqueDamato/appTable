@@ -93,7 +93,23 @@
     }   
 }
 
+- (IBAction)editar:(id)sender {
+    
+//    [self tableView] =
+//    self.tableView
+    
+    if ([self tableView].editing  ) {
+        [[self tableView]setEditing:false ];
+        
+    }
+    else
+    [[self tableView] setEditing:true];
+}
 
+    
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{}
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
@@ -121,6 +137,7 @@
         appVC.item = [lista.itens objectAtIndex:ip.row];
     }
 }
+
 
 
 @end
