@@ -10,12 +10,13 @@
 
 @implementation Item
 
-- (instancetype)initWithNome:(NSString *)n eCategoria:(NSString *)c eImagem:(NSString *)i {
+- (instancetype)initWithNome:(NSString *)n eCategoria:(NSString *)c eImagem:(NSString *)i eDescricao:(NSString *)descricao {
     self = [super init];
     if (self) {
         _nome = n;
         _categoria = c;
         _imagem = i;
+        _descricao = descricao;
     }
     return self;
 }

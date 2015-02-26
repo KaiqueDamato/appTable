@@ -9,7 +9,6 @@
 #import "appTableViewController.h"
 #import "AppList.h"
 #import "ViewController.h"
-#import "Item.h"
 
 @interface appTableViewController ()
 
@@ -60,9 +59,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
     long row = [indexPath row];
     
-        cell.textLabel.text = [lista.itens[row] nome];
-        cell.detailTextLabel.text = [lista.itens[row] categoria];
-        cell.imageView.image = [UIImage imageNamed:[lista.itens[row] imagem]];
+    cell.textLabel.text = [lista.itens[row] nome];
+    cell.detailTextLabel.text = [lista.itens[row] categoria];
+    cell.imageView.image = [UIImage imageNamed:[lista.itens[row] imagem]];
+    cell.imageView.layer.cornerRadius = 5;
+    cell.imageView.clipsToBounds = YES;
     
     return cell;
 }

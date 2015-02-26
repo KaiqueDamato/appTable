@@ -27,8 +27,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     _nomeApp.text = _item.nome;
-//    _categoria.text = _item.categoria;
+    _descricao.text = _item.categoria;
     _imagemApp.image = [UIImage imageNamed:_item.imagem];
+    _descricaoApp.text = _item.descricao;
 }
 
 - (IBAction)botaoVoltar:(id)sender {

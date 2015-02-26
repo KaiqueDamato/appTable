@@ -37,10 +37,10 @@
 }
 
 -(void)addObjects {
-    Item *item1 = [[Item alloc]initWithNome:@"iMimic" eCategoria:@"Jogos" eImagem:@"imimic"];
-    Item *item2 = [[Item alloc]initWithNome:@"Instagram" eCategoria:@"Fotografia" eImagem:@"instagram"];
-    Item *item3 = [[Item alloc]initWithNome:@"PhotoScape" eCategoria:@"Fotografia" eImagem:@"photoscape"];
-    Item *item4 = [[Item alloc]initWithNome:@"Duolingo" eCategoria:@"Educaçao" eImagem:@"duolingo"];
+    Item *item1 = [[Item alloc]initWithNome:@"iMimic" eCategoria:@"Jogos" eImagem:@"imimic" eDescricao:@"oioioioioioioioioioioioioioioioioioioioioioioioioioioi"];
+    Item *item2 = [[Item alloc]initWithNome:@"Instagram" eCategoria:@"Fotografia" eImagem:@"instagram" eDescricao:@"oioioioioioioioioioioioioioioioioioioioioioioioioioioi"];
+    Item *item3 = [[Item alloc]initWithNome:@"PhotoScape" eCategoria:@"Fotografia" eImagem:@"photoscape" eDescricao:@"oioioioioioioioioioioioioioioioioioioioioioioioioioioi"];
+    Item *item4 = [[Item alloc]initWithNome:@"Duolingo" eCategoria:@"Educaçao" eImagem:@"duolingo" eDescricao:@"oioioioioioioioioioioioioioioioioioioioioioioioioioioi"];
     
     [_itens addObject:item1];
     [_itens addObject:item2];

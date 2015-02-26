@@ -13,7 +13,8 @@
 @property NSString *imagem;
 @property NSString *nome;
 @property NSString *categoria;
+@property NSString *descricao;
 
--(instancetype)initWithNome:(NSString *)n eCategoria:(NSString *)c eImagem:(NSString *)i;
+-(instancetype)initWithNome:(NSString *)n eCategoria:(NSString *)c eImagem:(NSString *)i eDescricao:(NSString *)descricao;
 
 @end
