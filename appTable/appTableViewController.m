@@ -8,7 +8,8 @@
 
 #import "appTableViewController.h"
 #import "AppList.h"
-#import "appTableViewCell.h"
+#import "ViewController.h"
+#import "Item.h"
 
 @interface appTableViewController ()
 
@@ -16,8 +17,7 @@
 
 @implementation appTableViewController {
     AppList *lista;
-    appTableViewCell *cells;
-    UIImage *image;
+    Item *item;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -27,8 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    lista = [[AppList alloc]init];
-    cells = [[appTableViewCell alloc]init];
+    lista = [AppList sharedInstance];
 //    self.tableView.rowHeight = 44;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -53,40 +52,42 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [lista.apps count];
+    return [lista.itens count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    appTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
     long row = [indexPath row];
-    cell.textLabel.text = lista.apps.nome[row];
-    cell.detailTextLabel.text = apps.categoria[row];
-    cell.imageView.image = [UIImage imageNamed:apps.app[row]];
     
+        cell.textLabel.text = [lista.itens[row] nome];
+        cell.detailTextLabel.text = [lista.itens[row] categoria];
+        cell.imageView.image = [UIImage imageNamed:[lista.itens[row] imagem]];
     
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [lista.itens removeObjectAtIndex:[indexPath row]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView reloadData];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -102,14 +103,19 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showAppDetails"]) {
+        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+        ViewController *appVC = (ViewController *)[segue destinationViewController];
+        appVC.item = [lista.itens objectAtIndex:ip.row];
+    }
 }
-*/
+
 
 @end

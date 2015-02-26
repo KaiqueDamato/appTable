@@ -24,6 +24,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _nomeApp.text = _item.nome;
+//    _categoria.text = _item.categoria;
+    _imagemApp.image = [UIImage imageNamed:_item.imagem];
+}
+
 - (IBAction)botaoVoltar:(id)sender {
    
     [self dismissViewControllerAnimated:true completion:nil];

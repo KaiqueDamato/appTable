@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Item.h"
 
 @interface ViewController : UIViewController
 
+@property Item *item;
 @property (weak, nonatomic) IBOutlet UILabel *nomeApp;
 @property (weak, nonatomic) IBOutlet UIImageView *imagemApp;
 - (IBAction)botaoVoltar:(id)sender;

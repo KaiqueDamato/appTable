@@ -17,7 +17,6 @@
 		ECFE4DA71A9E12B200ADCCED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECFE4DA51A9E12B200ADCCED /* LaunchScreen.xib */; };
 		ECFE4DB31A9E12B200ADCCED /* appTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFE4DB21A9E12B200ADCCED /* appTableTests.m */; };
 		ECFE4DBE1A9E165900ADCCED /* appTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFE4DBD1A9E165900ADCCED /* appTableViewController.m */; };
-		ECFE4DC11A9E168600ADCCED /* appTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFE4DC01A9E168600ADCCED /* appTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +49,6 @@
 		ECFE4DB21A9E12B200ADCCED /* appTableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTableTests.m; sourceTree = "<group>"; };
 		ECFE4DBC1A9E165900ADCCED /* appTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appTableViewController.h; sourceTree = SOURCE_ROOT; };
 		ECFE4DBD1A9E165900ADCCED /* appTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = appTableViewController.m; sourceTree = SOURCE_ROOT; };
-		ECFE4DBF1A9E168600ADCCED /* appTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appTableViewCell.h; sourceTree = "<group>"; };
-		ECFE4DC01A9E168600ADCCED /* appTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = appTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +100,6 @@
 				ECFE4DA31A9E12B200ADCCED /* Images.xcassets */,
 				ECFE4DA51A9E12B200ADCCED /* LaunchScreen.xib */,
 				ECFE4D961A9E12B200ADCCED /* Supporting Files */,
-				ECFE4DBF1A9E168600ADCCED /* appTableViewCell.h */,
-				ECFE4DC01A9E168600ADCCED /* appTableViewCell.m */,
 				0593C3851A9E35C3003BFB8B /* AppList.h */,
 				0593C3861A9E35C3003BFB8B /* AppList.m */,
 				05D91E661A9F60BD0061E728 /* Item.h */,
@@ -245,7 +240,6 @@
 				0593C3871A9E35C3003BFB8B /* AppList.m in Sources */,
 				ECFE4DBE1A9E165900ADCCED /* appTableViewController.m in Sources */,
 				05D91E681A9F60BD0061E728 /* Item.m in Sources */,
-				ECFE4DC11A9E168600ADCCED /* appTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

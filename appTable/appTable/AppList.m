@@ -15,7 +15,7 @@
 -(instancetype)init {
     self = [super init];
     if (self) {
-        _apps = [[NSMutableArray alloc] init];
+        _itens = [[NSMutableArray alloc] init];
         [self addObjects];
     }
     return self;
@@ -42,10 +42,10 @@
     Item *item3 = [[Item alloc]initWithNome:@"PhotoScape" eCategoria:@"Fotografia" eImagem:@"photoscape"];
     Item *item4 = [[Item alloc]initWithNome:@"Duolingo" eCategoria:@"Educaçao" eImagem:@"duolingo"];
     
-    [_apps addObject:item1];
-    [_apps addObject:item2];
-    [_apps addObject:item3];
-    [_apps addObject:item4];
+    [_itens addObject:item1];
+    [_itens addObject:item2];
+    [_itens addObject:item3];
+    [_itens addObject:item4];
 }
 
 @end

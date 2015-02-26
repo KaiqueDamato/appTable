@@ -10,8 +10,9 @@
 
 @interface AppList : NSObject
 
-@property NSMutableArray *apps;
+@property NSMutableArray *itens;
 
 -(void)addObjects;
++ (AppList *)sharedInstance;
 
 @end
