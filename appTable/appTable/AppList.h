@@ -10,10 +10,8 @@
 
 @interface AppList : NSObject
 
-@property NSMutableArray *app;
-@property NSMutableArray *nome;
-@property NSMutableArray *categoria;
+@property NSMutableArray *apps;
 
--(void)cadastraApps;
+-(void)addObjects;
 
 @end

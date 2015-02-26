@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0593C3871A9E35C3003BFB8B /* AppList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593C3861A9E35C3003BFB8B /* AppList.m */; };
+		05D91E681A9F60BD0061E728 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D91E671A9F60BD0061E728 /* Item.m */; };
 		ECFE4D991A9E12B200ADCCED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFE4D981A9E12B200ADCCED /* main.m */; };
 		ECFE4D9C1A9E12B200ADCCED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFE4D9B1A9E12B200ADCCED /* AppDelegate.m */; };
 		ECFE4D9F1A9E12B200ADCCED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFE4D9E1A9E12B200ADCCED /* ViewController.m */; };
@@ -32,6 +33,8 @@
 /* Begin PBXFileReference section */
 		0593C3851A9E35C3003BFB8B /* AppList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppList.h; sourceTree = "<group>"; };
 		0593C3861A9E35C3003BFB8B /* AppList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppList.m; sourceTree = "<group>"; };
+		05D91E661A9F60BD0061E728 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		05D91E671A9F60BD0061E728 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		ECFE4D931A9E12B200ADCCED /* appTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFE4D971A9E12B200ADCCED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECFE4D981A9E12B200ADCCED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 				ECFE4DC01A9E168600ADCCED /* appTableViewCell.m */,
 				0593C3851A9E35C3003BFB8B /* AppList.h */,
 				0593C3861A9E35C3003BFB8B /* AppList.m */,
+				05D91E661A9F60BD0061E728 /* Item.h */,
+				05D91E671A9F60BD0061E728 /* Item.m */,
 			);
 			path = appTable;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				ECFE4D991A9E12B200ADCCED /* main.m in Sources */,
 				0593C3871A9E35C3003BFB8B /* AppList.m in Sources */,
 				ECFE4DBE1A9E165900ADCCED /* appTableViewController.m in Sources */,
+				05D91E681A9F60BD0061E728 /* Item.m in Sources */,
 				ECFE4DC11A9E168600ADCCED /* appTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

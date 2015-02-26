@@ -8,56 +8,44 @@
 
 #import "AppList.h"
 #import <UIKit/UIKit.h>
+#import "Item.h"
 
 @implementation AppList
-
 
 -(instancetype)init {
     self = [super init];
     if (self) {
-        _app = [[NSMutableArray alloc] init];
-        _nome = [[NSMutableArray alloc] init];
-        _categoria = [[NSMutableArray alloc] init];
-        [self cadastraApps];
+        _apps = [[NSMutableArray alloc] init];
+        [self addObjects];
     }
     return self;
 }
 
--(void)cadastraApps {
++(instancetype)sharedInstance {
     
-    [_app addObject:@"netflix"];
-    [_nome addObject:@"Netflix "];
-    [_categoria addObject:@"Entretenimento"];
+    static dispatch_once_t onceToken = 0;
     
-    [_app addObject:@"2048"];
-    [_nome addObject:@"2048"];
-    [_categoria addObject:@"Jogos"];
+    __strong static AppList *instance = nil;
     
-    [_app addObject:@"imimic"];
-    [_nome addObject:@"iMimic"];
-    [_categoria addObject:@"Jogos"];
+    dispatch_once(&onceToken,^{
+        
+        instance = [[self alloc] init];
+        
+    });
     
-    [_app addObject:@"duolingo"];
-    [_nome addObject:@"Duolingo"];
-    [_categoria addObject:@"Educacão"];
+    return instance;
+}
+
+-(void)addObjects {
+    Item *item1 = [[Item alloc]initWithNome:@"iMimic" eCategoria:@"Jogos" eImagem:@"imimic"];
+    Item *item2 = [[Item alloc]initWithNome:@"Instagram" eCategoria:@"Fotografia" eImagem:@"instagram"];
+    Item *item3 = [[Item alloc]initWithNome:@"PhotoScape" eCategoria:@"Fotografia" eImagem:@"photoscape"];
+    Item *item4 = [[Item alloc]initWithNome:@"Duolingo" eCategoria:@"Educaçao" eImagem:@"duolingo"];
     
-    [_app addObject:@"itranslate"];
-    [_nome addObject:@"iTranslate"];
-    [_categoria addObject:@"Educacão"];
-    
-    [_app addObject:@"instagram"];
-    [_nome addObject:@"Instagram"];
-    [_categoria addObject:@"Fotografia"];
-    
-    [_app addObject:@"vscocam"];
-    [_nome addObject:@"VSCOcam"];
-    [_categoria addObject:@"Fotografia"];
-    
-    [_app addObject:@"photoscape"];
-    [_nome addObject:@"PhotoScape"];
-    [_categoria addObject:@"Fotografia"];
-    
-    
+    [_apps addObject:item1];
+    [_apps addObject:item2];
+    [_apps addObject:item3];
+    [_apps addObject:item4];
 }
 
 @end

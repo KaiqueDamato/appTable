@@ -15,7 +15,7 @@
 @end
 
 @implementation appTableViewController {
-    AppList *apps;
+    AppList *lista;
     appTableViewCell *cells;
     UIImage *image;
 }
@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    apps = [[AppList alloc]init];
+    lista = [[AppList alloc]init];
     cells = [[appTableViewCell alloc]init];
 //    self.tableView.rowHeight = 44;
     // Uncomment the following line to preserve selection between presentations.
@@ -53,14 +53,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [apps.nome count];
+    return [lista.apps count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     appTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
     long row = [indexPath row];
-    cell.textLabel.text = apps.nome[row];
+    cell.textLabel.text = lista.apps.nome[row];
     cell.detailTextLabel.text = apps.categoria[row];
     cell.imageView.image = [UIImage imageNamed:apps.app[row]];
     
