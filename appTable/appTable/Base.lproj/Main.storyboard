@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-1024" y="-142"/>
         </scene>
-        <!--App Table View Controller-->
+        <!--Apps-->
         <scene sceneID="Etb-Rh-fUP">
             <objects>
                 <tableViewController id="wu6-rk-1el" customClass="appTableViewController" sceneMemberID="viewController">
@@ -58,7 +58,7 @@
                             <outlet property="delegate" destination="wu6-rk-1el" id="9bh-if-bJS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Ih2-50-cOG">
+                    <navigationItem key="navigationItem" title="Apps" id="Ih2-50-cOG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="i4Z-JP-ztA">
                             <connections>
                                 <segue destination="Txw-9q-vyq" kind="presentation" id="b1I-Dw-TFY"/>
@@ -214,6 +214,9 @@
                                 <state key="normal" title="Cancelar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelarAdd:" destination="Txw-9q-vyq" eventType="touchUpInside" id="mD0-7x-Ua2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHm-iP-3Lh">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -420,6 +423,12 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="200"/>
                                     </constraint>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="EFN-Kd-ll2"/>

@@ -10,7 +10,7 @@
 #import "Item.h"
 #import "AppList.h"
 
-@interface AddCellViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AddCellViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
 
 @end
 
@@ -22,13 +22,21 @@
     [super viewDidLoad];
     list = [AppList sharedInstance];
     _descriptionTextView.layer.borderColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1].CGColor;
-    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchUpView)];
+    [self.view addGestureRecognizer:tap];
+    _descriptionTextView.delegate = self;
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    [UIView animateWithDuration:0.2 animations:^{
+        self.view.transform = CGAffineTransformMakeTranslation(0, self.view.frame.origin.y-200);
+    }];
 }
 
 - (IBAction)selectImage:(UIButton *)sender {
@@ -38,6 +46,21 @@
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     sender.hidden = YES;
     [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+    self.view.transform = CGAffineTransformMakeTranslation(0, self.view.frame.origin.y+200);
+    return YES;
+}
+
+- (void)didTouchUpView {
+    if ([_nomeTextField isFirstResponder]) {
+        [_nomeTextField resignFirstResponder];
+    }else if ([_categoriaTextField isFirstResponder]) {
+        [_categoriaTextField resignFirstResponder];
+    }else if ([_descriptionTextView isFirstResponder]) {
+        [_descriptionTextView resignFirstResponder];
+    }
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -55,8 +78,16 @@
     if (![_nomeTextField.text isEqualToString:@""] && ![_categoriaTextField.text isEqualToString:@""] && ![_descriptionTextView.text isEqualToString:@""] && _image.image) {
         Item *t = [[Item alloc] initWithNome:_nomeTextField.text eCategoria:_categoriaTextField.text eImagem:[self saveImage:_image.image] eDescricao:_descriptionTextView.text];
         [list.itens addObject:t];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Erro" message:@"Preencha os campos" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (NSString *)saveImage: (UIImage*)image {
@@ -72,6 +103,10 @@
         [data writeToFile:path atomically:YES];
     }
     return path;
+}
+
+- (IBAction)cancelarAdd:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
