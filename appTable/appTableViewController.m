@@ -45,25 +45,36 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return [lista sections];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [lista.itens count];
+    return [lista.itens[section] count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 20;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSIndexPath *indexPath;
+    UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 50, 30)];
+    headerView.text = [[lista.itens[section][indexPath.row] categoria] lowercaseString];
+    headerView.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
+    return headerView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
-    long row = [indexPath row];
     
-    cell.textLabel.text = [lista.itens[row] nome];
-    cell.detailTextLabel.text = [lista.itens[row] categoria];
-    cell.imageView.image = [UIImage imageNamed:[lista.itens[row] imagem]];
+    cell.textLabel.text = [lista.itens[indexPath.section][indexPath.row] nome];
+    cell.detailTextLabel.text = [lista.itens[indexPath.section][indexPath.row] categoria];
+    cell.imageView.image = [UIImage imageNamed:[lista.itens[indexPath.section][indexPath.row] imagem]];
     if (!cell.imageView.image) {
         
-        UIImage *newImage = [UIImage imageWithContentsOfFile:[lista.itens[row] imagem]];
+        UIImage *newImage = [UIImage imageWithContentsOfFile:[lista.itens[indexPath.section][indexPath.row] imagem]];
         cell.imageView.image = newImage;
     }
     cell.imageView.layer.cornerRadius = 5;
@@ -98,19 +109,11 @@
     }
 }
 
-
-
--(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
-{
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
     Item *t = [lista.itens objectAtIndex:[sourceIndexPath row]];
     [lista.itens removeObjectAtIndex:sourceIndexPath.row];
     [lista.itens insertObject:t atIndex:destinationIndexPath.row]; 
 }
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
 
 /*
 // Override to support conditional rearranging of the table view.

@@ -14,5 +14,5 @@
 
 -(void)addObjects;
 + (AppList *)sharedInstance;
-
+- (NSInteger)sections;
 @end

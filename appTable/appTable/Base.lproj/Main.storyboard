@@ -398,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Gv-O2-aX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-267" y="602.25"/>
+            <point key="canvasLocation" x="-266" y="830"/>
         </scene>
         <!--Edit View Controller-->
         <scene sceneID="iFl-F9-MdR">
@@ -416,7 +416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbB-A5-9Zx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="514.5" y="602.25"/>
+            <point key="canvasLocation" x="514" y="812"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -486,8 +486,7 @@
                                         <exclude reference="KYJ-BF-1rb"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="100" y="580" width="200" height="200"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Fh7-MH-PAp"/>
                                         <include reference="KYJ-BF-1rb"/>
@@ -566,9 +565,8 @@
                             </mask>
                         </variation>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="EqF-xO-pn2"/>
-                    </toolbarItems>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="pWA-Dt-jHZ"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="descricao" destination="Ng1-KS-eJE" id="w0u-0K-0El"/>

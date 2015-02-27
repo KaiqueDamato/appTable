@@ -76,7 +76,7 @@
 
 - (IBAction)confirma:(UIButton *)sender {
     if (![_nomeTextField.text isEqualToString:@""] && ![_categoriaTextField.text isEqualToString:@""] && ![_descriptionTextView.text isEqualToString:@""] && _image.image) {
-        Item *t = [[Item alloc] initWithNome:_nomeTextField.text eCategoria:_categoriaTextField.text eImagem:[self saveImage:_image.image] eDescricao:_descriptionTextView.text];
+        Item *t = [[Item alloc] initWithNome:_nomeTextField.text eCategoria:[_categoriaTextField.text uppercaseString] eImagem:[self saveImage:_image.image] eDescricao:_descriptionTextView.text];
         [list.itens addObject:t];
         [self dismissViewControllerAnimated:YES completion:nil];
     }else {
