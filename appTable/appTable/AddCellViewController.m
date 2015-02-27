@@ -96,7 +96,7 @@
     {
         path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                              NSUserDomainMask, YES)[0];
-        path = [path stringByAppendingString:
+        path = [path stringByAppendingPathComponent:
                           [NSString stringWithFormat:@"%@.png",
                            _nomeTextField.text]];
         NSData* data = UIImagePNGRepresentation(image);

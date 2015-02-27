@@ -54,7 +54,6 @@
     return [lista.itens count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
     long row = [indexPath row];
@@ -63,6 +62,7 @@
     cell.detailTextLabel.text = [lista.itens[row] categoria];
     cell.imageView.image = [UIImage imageNamed:[lista.itens[row] imagem]];
     if (!cell.imageView.image) {
+        
         UIImage *newImage = [UIImage imageWithContentsOfFile:[lista.itens[row] imagem]];
         cell.imageView.image = newImage;
     }
@@ -72,14 +72,11 @@
     return cell;
 }
 
-
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-
-
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,19 +91,12 @@
 }
 
 - (IBAction)editar:(id)sender {
-    
-//    [self tableView] =
-//    self.tableView
-    
-    if ([self tableView].editing  ) {
+    if ([self tableView].editing) {
         [[self tableView]setEditing:false ];
-        
+    }else {
+        [[self tableView] setEditing:true];
     }
-    else
-    [[self tableView] setEditing:true];
 }
-
-    
 
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {}
@@ -123,7 +113,6 @@
     return YES;
 }
 */
-
 
 #pragma mark - Navigation
 
