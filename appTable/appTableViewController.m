@@ -102,10 +102,14 @@
     [[self tableView] setEditing:true];
 }
 
-    
+
 
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
-{}
+{
+    Item *t = [lista.itens objectAtIndex:[sourceIndexPath row]];
+    [lista.itens removeObjectAtIndex:sourceIndexPath.row];
+    [lista.itens insertObject:t atIndex:destinationIndexPath.row]; 
+}
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {

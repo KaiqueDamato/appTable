@@ -468,7 +468,8 @@
                                         <exclude reference="KYJ-BF-1rb"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="100" y="580" width="200" height="200"/>
                                     <mask key="constraints">
                                         <include reference="Fh7-MH-PAp"/>
                                         <include reference="KYJ-BF-1rb"/>
@@ -547,6 +548,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="EqF-xO-pn2"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="descricao" destination="Ng1-KS-eJE" id="w0u-0K-0El"/>
                         <outlet property="descricaoApp" destination="3x9-cK-bmo" id="94N-De-MJe"/>
