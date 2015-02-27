@@ -27,12 +27,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     lista = [AppList sharedInstance];
+    [lista addObjects];
 //    self.tableView.rowHeight = 44;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,10 +73,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
+    Item *t = lista.itens[indexPath.section][indexPath.row];
     
-    cell.textLabel.text = [lista.itens[indexPath.section][indexPath.row] nome];
-    cell.detailTextLabel.text = [lista.itens[indexPath.section][indexPath.row] categoria];
-    cell.imageView.image = [UIImage imageNamed:[lista.itens[indexPath.section][indexPath.row] imagem]];
+    cell.textLabel.text = t.nome;//[lista.itens[indexPath.section][indexPath.row] nome];
+    cell.detailTextLabel.text = t.categoria;//[lista.itens[indexPath.section][indexPath.row] categoria];
+    cell.imageView.image = [UIImage imageNamed:t.imagem];//[lista.itens[indexPath.section][indexPath.row] imagem]];
     if (!cell.imageView.image) {
         
         UIImage *newImage = [UIImage imageWithContentsOfFile:[lista.itens[indexPath.section][indexPath.row] imagem]];
@@ -93,12 +99,13 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [lista.itens removeObjectAtIndex:[indexPath row]];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [lista.itens[indexPath.section] removeObjectAtIndex:indexPath.row];
+        if ([lista.itens[indexPath.section] count] == 0) {
+            [lista.itens removeObjectAtIndex:indexPath.section];
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
         [tableView reloadData];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 
 - (IBAction)editar:(id)sender {
@@ -110,9 +117,12 @@
 }
 
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    Item *t = [lista.itens objectAtIndex:[sourceIndexPath row]];
-    [lista.itens removeObjectAtIndex:sourceIndexPath.row];
-    [lista.itens insertObject:t atIndex:destinationIndexPath.row]; 
+    if (sourceIndexPath.section == destinationIndexPath.section) {
+        Item *t = [lista.itens objectAtIndex:[sourceIndexPath row]];
+        [lista.itens removeObjectAtIndex:sourceIndexPath.row];
+        [lista.itens insertObject:t atIndex:destinationIndexPath.row];
+    }
+    [self.tableView reloadData];
 }
 
 /*
@@ -132,7 +142,7 @@
     if ([segue.identifier isEqualToString:@"showAppDetails"]) {
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         ViewController *appVC = (ViewController *)[segue destinationViewController];
-        appVC.item = [lista.itens objectAtIndex:ip.row];
+        appVC.item = [lista.itens[ip.section] objectAtIndex:ip.row];
     }
 }
 

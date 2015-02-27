@@ -7,15 +7,19 @@
 //
 
 #import "ViewController.h"
+#import "AppList.h"
 
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    AppList *list;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    list = [[AppList alloc] init];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,14 +30,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+//    NSIndexPath *indexPath = [[NSIndexPath alloc] init];
     _nomeApp.text = _item.nome;
     _descricao.text = _item.categoria;
     _imagemApp.image = [UIImage imageNamed:_item.imagem];
     _descricaoApp.text = _item.descricao;
 }
 
-- (IBAction)botaoVoltar:(id)sender {
-   
-    [self dismissViewControllerAnimated:true completion:nil];
-}
 @end

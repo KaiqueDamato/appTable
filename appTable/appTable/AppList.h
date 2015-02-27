@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Item;
 
 @interface AppList : NSObject
 
 @property NSMutableArray *itens;
+@property NSMutableArray *categorias;
 
 -(void)addObjects;
 + (AppList *)sharedInstance;
 - (NSInteger)sections;
+- (void)addItem:(Item *)item;
+
 @end

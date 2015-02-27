@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Item.h"
 
 @interface AddCellViewController : UIViewController
 
@@ -17,4 +18,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *categoriaTextField;
 
 @property (weak, nonatomic) IBOutlet UITextField *nomeTextField;
+
 @end

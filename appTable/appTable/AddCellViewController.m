@@ -77,7 +77,9 @@
 - (IBAction)confirma:(UIButton *)sender {
     if (![_nomeTextField.text isEqualToString:@""] && ![_categoriaTextField.text isEqualToString:@""] && ![_descriptionTextView.text isEqualToString:@""] && _image.image) {
         Item *t = [[Item alloc] initWithNome:_nomeTextField.text eCategoria:[_categoriaTextField.text uppercaseString] eImagem:[self saveImage:_image.image] eDescricao:_descriptionTextView.text];
-        [list.itens addObject:t];
+        
+        [list addItem:t];
+                
         [self dismissViewControllerAnimated:YES completion:nil];
     }else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Erro" message:@"Preencha os campos" preferredStyle:UIAlertControllerStyleAlert];
@@ -90,7 +92,7 @@
     }
 }
 
-- (NSString *)saveImage: (UIImage*)image {
+- (NSString *)saveImage: (UIImage *)image {
     NSString *path;
     if (image != nil)
     {
