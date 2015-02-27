@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" textLabel="5C2-On-cec" detailTextLabel="7zn-SD-nyx" style="IBUITableViewCellStyleSubtitle" id="pMp-lN-3zo">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="tableCell" textLabel="5C2-On-cec" detailTextLabel="7zn-SD-nyx" style="IBUITableViewCellStyleSubtitle" id="pMp-lN-3zo">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pMp-lN-3zo" id="MLY-q5-Llb">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -398,7 +398,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Gv-O2-aX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-277.5" y="591"/>
+            <point key="canvasLocation" x="-267" y="602.25"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="iFl-F9-MdR">
+            <objects>
+                <viewController id="C2P-WP-Fh9" customClass="EditViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aeH-zJ-Zz9"/>
+                        <viewControllerLayoutGuide type="bottom" id="aUO-zs-otp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RJk-dP-wKa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YbB-A5-9Zx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514.5" y="602.25"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -561,7 +579,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="419" y="-142"/>
+            <point key="canvasLocation" x="514.5" y="-142.5"/>
         </scene>
     </scenes>
 </document>
