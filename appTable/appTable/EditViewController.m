@@ -48,6 +48,14 @@
     }
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch * touch = [touches anyObject];
+    if(touch.phase == UITouchPhaseBegan) {
+        [self.nome resignFirstResponder];
+        [self.descricao resignFirstResponder];
+    }
+}
+
 
 /*
 #pragma mark - Navigation
