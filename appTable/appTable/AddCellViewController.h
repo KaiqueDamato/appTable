@@ -19,4 +19,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *nomeTextField;
 
+@property (weak, nonatomic) IBOutlet UIButton *escolheFoto;
+
 @end

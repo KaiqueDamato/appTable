@@ -84,6 +84,10 @@
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    if ([_image isOpaque]) {
+        UIColor *color = [_escolheFoto tintColor];;
+        [_escolheFoto setTitleColor:color forState:UIControlStateNormal];
+    }
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 

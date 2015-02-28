@@ -75,7 +75,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdH-mL-1HF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-266" y="-142"/>
+            <point key="canvasLocation" x="-267" y="-142.5"/>
         </scene>
         <!--Add Cell View Controller-->
         <scene sceneID="Byj-lJ-msE">
@@ -394,13 +394,14 @@
                     <connections>
                         <outlet property="categoriaTextField" destination="3rU-KZ-W9k" id="QNB-xN-9eV"/>
                         <outlet property="descriptionTextView" destination="SXu-hi-oT3" id="Ioz-M2-sxJ"/>
+                        <outlet property="escolheFoto" destination="4Si-kO-Y2I" id="c0U-QY-c40"/>
                         <outlet property="image" destination="2Qp-CL-uky" id="Xz2-J6-AJa"/>
                         <outlet property="nomeTextField" destination="HU4-R3-30N" id="uFg-OE-XIY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Gv-O2-aX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-266" y="830"/>
+            <point key="canvasLocation" x="-267" y="564.75"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -764,7 +765,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FP3-J5-0Y3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1336.5" y="-138"/>
+            <point key="canvasLocation" x="1282.5" y="-142.5"/>
         </scene>
     </scenes>
 </document>
