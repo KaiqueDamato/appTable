@@ -18,5 +18,6 @@
 + (AppList *)sharedInstance;
 - (NSInteger)sections;
 - (void)addItem:(Item *)item;
+- (void) moveRows:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath;
 
 @end

@@ -10,7 +10,7 @@
 #import "Item.h"
 #import "AppList.h"
 
-@interface AddCellViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
+@interface AddCellViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate>
 
 @end
 
@@ -25,6 +25,8 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchUpView)];
     [self.view addGestureRecognizer:tap];
     _descriptionTextView.delegate = self;
+    _nomeTextField.delegate = self;
+    _categoriaTextField.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -44,12 +46,23 @@
     picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    sender.hidden = YES;
+    [sender setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
     [self presentViewController:picker animated:YES completion:NULL];
 }
 
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView {
     self.view.transform = CGAffineTransformMakeTranslation(0, self.view.frame.origin.y+200);
+    return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
+{
+    if (textField == _nomeTextField) {
+        [_categoriaTextField becomeFirstResponder];
+    } else if (textField == _categoriaTextField) {
+        [_descriptionTextView becomeFirstResponder];
+    }
+    
     return YES;
 }
 

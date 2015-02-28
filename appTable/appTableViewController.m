@@ -75,9 +75,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
     Item *t = lista.itens[indexPath.section][indexPath.row];
     
-    cell.textLabel.text = t.nome;//[lista.itens[indexPath.section][indexPath.row] nome];
-    cell.detailTextLabel.text = t.categoria;//[lista.itens[indexPath.section][indexPath.row] categoria];
-    cell.imageView.image = [UIImage imageNamed:t.imagem];//[lista.itens[indexPath.section][indexPath.row] imagem]];
+    cell.textLabel.text = t.nome;
+    cell.detailTextLabel.text = t.categoria;
+    cell.imageView.image = [UIImage imageNamed:t.imagem];
     if (!cell.imageView.image) {
         
         UIImage *newImage = [UIImage imageWithContentsOfFile:[lista.itens[indexPath.section][indexPath.row] imagem]];
@@ -117,11 +117,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    if (sourceIndexPath.section == destinationIndexPath.section) {
-        Item *t = [lista.itens objectAtIndex:[sourceIndexPath row]];
-        [lista.itens removeObjectAtIndex:sourceIndexPath.row];
-        [lista.itens insertObject:t atIndex:destinationIndexPath.row];
-    }
+    [lista moveRows:sourceIndexPath toIndexPath:destinationIndexPath];
     [self.tableView reloadData];
 }
 

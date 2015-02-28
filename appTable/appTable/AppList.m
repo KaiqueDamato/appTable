@@ -74,7 +74,6 @@
     }
 }
 
-
 - (NSMutableArray *)verificaCategoria:(Item *)item {
     for (int i = 0; i < [_itens count]; i++) {
         if ([[item.categoria uppercaseString] isEqualToString:[_categorias[i] uppercaseString]]) {
@@ -82,5 +81,13 @@
         }
     }
     return nil;
+}
+
+- (void) moveRows:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    if (sourceIndexPath.section == destinationIndexPath.section) {
+        Item *t = [_itens objectAtIndex:sourceIndexPath.row];
+        [_itens removeObjectAtIndex:sourceIndexPath.row];
+        [_itens insertObject:t atIndex:destinationIndexPath.row];
+    }
 }
 @end

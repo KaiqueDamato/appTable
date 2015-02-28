@@ -400,24 +400,6 @@
             </objects>
             <point key="canvasLocation" x="-266" y="830"/>
         </scene>
-        <!--Edit View Controller-->
-        <scene sceneID="iFl-F9-MdR">
-            <objects>
-                <viewController id="C2P-WP-Fh9" customClass="EditViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aeH-zJ-Zz9"/>
-                        <viewControllerLayoutGuide type="bottom" id="aUO-zs-otp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RJk-dP-wKa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YbB-A5-9Zx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="514" y="812"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
