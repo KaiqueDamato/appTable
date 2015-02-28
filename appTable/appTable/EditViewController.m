@@ -31,7 +31,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)confirmar:(UIButton *)sender {
+- (IBAction)salvar:(UIButton *)sender {
     if (![_nome.text isEqualToString:@""] && ![_categoria.text isEqualToString:@""] && ![_descricao.text isEqualToString:@""]) {
         _item.nome = _nome.text;
         _item.descricao = _descricao.text;
@@ -46,10 +46,6 @@
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
     }
-}
-
-- (IBAction)cancelar:(id)sender {
-    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
