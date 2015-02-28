@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Item.h"
 
 @interface EditViewController : UIViewController
+
+@property Item *item;
+@property (weak, nonatomic) IBOutlet UIImageView *imagem;
+@property (weak, nonatomic) IBOutlet UITextField *nome;
+@property (weak, nonatomic) IBOutlet UILabel *categoria;
+@property (weak, nonatomic) IBOutlet UITextView *descricao;
+
+- (IBAction)confirmar:(id)sender;
+
+- (IBAction)cancelar:(id)sender;
 
 @end
