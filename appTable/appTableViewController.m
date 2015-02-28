@@ -102,6 +102,7 @@
         [lista.itens[indexPath.section] removeObjectAtIndex:indexPath.row];
         if ([lista.itens[indexPath.section] count] == 0) {
             [lista.itens removeObjectAtIndex:indexPath.section];
+            [lista.categorias removeObjectAtIndex:indexPath.section];
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
         }
         [tableView reloadData];
