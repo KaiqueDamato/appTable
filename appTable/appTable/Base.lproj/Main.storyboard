@@ -480,8 +480,7 @@
                                         <exclude reference="v7k-2k-bZD"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="50" y="430" width="300" height="250"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="3G0-BV-q0A"/>
                                         <exclude reference="CxH-ud-mfr"/>
