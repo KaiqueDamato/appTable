@@ -4,7 +4,7 @@
 //
 //  Created by Kaique Damato on 2/26/15.
 //  Copyright (c) 2015 Kaique Damato. All rights reserved.
-//  teste
+//
 
 #import <UIKit/UIKit.h>
 #import "Item.h"
