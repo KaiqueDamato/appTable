@@ -31,7 +31,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)salvar:(UIButton *)sender {
+- (IBAction)confirmar:(UIButton *)sender {
     if (![_nome.text isEqualToString:@""] && ![_categoria.text isEqualToString:@""] && ![_descricao.text isEqualToString:@""]) {
         _item.nome = _nome.text;
         _item.descricao = _descricao.text;
@@ -46,6 +46,10 @@
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
     }
+}
+
+-(IBAction)cancelar:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

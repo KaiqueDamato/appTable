@@ -17,6 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *categoria;
 @property (weak, nonatomic) IBOutlet UITextView *descricao;
 
-- (IBAction)salvar:(id)sender;
-
+- (IBAction)cancelar:(id)sender;
+- (IBAction)confirmar:(id)sender;
 @end
