@@ -536,9 +536,25 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krj-vJ-VIP">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="Xwi-r8-T4g"/>
+                                    <constraint firstAttribute="height" constant="30" id="lYT-f1-fk0"/>
+                                </constraints>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Xwi-r8-T4g"/>
+                                        <exclude reference="lYT-f1-fk0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Xwi-r8-T4g"/>
+                                        <include reference="lYT-f1-fk0"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="salvar:" destination="C2P-WP-Fh9" eventType="touchUpInside" id="lEM-Kw-g2j"/>
                                 </connections>
